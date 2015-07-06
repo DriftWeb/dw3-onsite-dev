@@ -1,5 +1,7 @@
 ﻿(function () {
-    angular.module('onsiteApp').controller('MapCtrl', function () {
+    angular.module('onsiteApp').controller('MapCtrl', function ($scope, $rootScope) {
+        var map;
+        var featureLayer = new ol.layer.Vector({});
         var initOl3Map = function () {
             proj4.defs("EPSG:25832", "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
             var projection = ol.proj.get('EPSG:25832');
@@ -30,10 +32,10 @@
 
 
                 })
-            })];
+            }), featureLayer];
 
 
-            var map = new ol.Map({
+            map = new ol.Map({
                 interactions: ol.interaction.defaults().extend([
                     // new ol.interaction.DragRotateAndZoom()
                 ]),
@@ -50,8 +52,57 @@
                     zoom: 2
                 })
             });
+
+            map.on('singleclick', function (evt) {
+                console.log(evt.coordinate[0]);
+                console.log(evt.coordinate[1]);
+            });
+        }
+        var featuresPaaOl3MapTak = function () {
+            var iconFeatures = [];
+            var iconFeature = new ol.Feature({
+                geometry: new ol.geom.Point(ol.proj.transform([561908.1699999999, 6301132.914999998], 'EPSG:25832', 'EPSG:25832', 'EPSG:25832')),
+                name: 'OG det var nr. et'
+                
+            });
+
+            var iconFeature2 = new ol.Feature({
+                geometry: new ol.geom.Point(ol.proj.transform([677064.42, 6154179.789999998], 'EPSG:25832', 'EPSG:25832', 'EPSG:25832')),
+                name: 'Test 2'
+                
+            });
+
+
+            iconFeatures.push(iconFeature);
+            iconFeatures.push(iconFeature2);
+            
+
+            var vectorSource = new ol.source.Vector({
+                features: iconFeatures 
+            });
+
+            var iconStyle = new ol.style.Style({
+                image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
+                    anchor: [0.5, 46],
+                    anchorXUnits: 'fraction',
+                    anchorYUnits: 'pixels',
+                    opacity: 0.95,
+                    src: '../../res/icon/mapIcon.png'
+                }))
+            });
+
+
+            //begge virker (hvis nu man ikke har features/source tilgængelig når kort initialiseres
+            featureLayer = new ol.layer.Vector({
+                source: vectorSource,
+                style: iconStyle
+            });
+            //featureLayer.setSource(vectorSource);
+            //featureLayer.setStyle(iconStyle);
+
         }
 
+        featuresPaaOl3MapTak();
         initOl3Map();
     });
 
