@@ -87,7 +87,7 @@
                     anchorXUnits: 'fraction',
                     anchorYUnits: 'pixels',
                     opacity: 0.95,
-                    src: '../../res/icon/mapIcon.png'
+                    src: './res/icon/mapIcon.png'
                 }))
             });
 
