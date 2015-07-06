@@ -1,6 +1,6 @@
-﻿(function () {
-    angular.module('onsiteApp').controller('HomeCtrl', function ($scope, $rootScope) {
-        $rootScope.list2 = [
+﻿'use strict';
+angular.module('onsiteApp').controller('HomeCtrl', function ($scope, $rootScope) {
+    $rootScope.list2 = [
 {
     friendlyId: 1,
     title: "Title 1"
@@ -21,11 +21,10 @@
     friendlyId: 5,
     title: "Title 5"
 }];
-        $scope.leftSlide = function (item) {
-            item.open = true;
-        };
-        $scope.rightSlide = function (item) {
-            item.open = false;
-        };
-    });
-})();
+    $scope.leftSlide = function (item) {
+        item.open = true;
+    };
+    $scope.rightSlide = function (item) {
+        item.open = false;
+    };
+});
