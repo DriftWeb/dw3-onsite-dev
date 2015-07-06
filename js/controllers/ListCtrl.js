@@ -32,5 +32,9 @@
         $scope.rightSlide = function(item) {
             item.open = false;
         };
+
+        $scope.click = function() {
+            alert('test');
+        }
     });
 })();
