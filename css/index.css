@@ -1,12 +1,13 @@
 a {
     
 }
+/** Dashboard **/
 
 .dashboardItem {
     background: lightblue;
     font-size: 20px;
     color: black;
-    height: 200px;
+    height: 120px;
     border: 1px solid black;
     border-radius: 4px;
     cursor: pointer;
@@ -32,4 +33,12 @@ a {
     font-size: 13px;
     left: 15px;
     right: 15px;
+}
+
+
+/** List **/
+.listItem {
+    border: 1px solid black;
+    border-radius: 4px;
+    background: lightblue;
 }
