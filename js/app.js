@@ -14,27 +14,3 @@ var app = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch'])
     $routeProvider.when('/map', { templateUrl: 'partials/mapView.html', controller: 'MapCtrl' });
     $routeProvider.otherwise({ redirectTo: '/' });
 }]);
-
-app.run(function ($rootScope) {
-    $rootScope.list = [
-    {
-        friendlyId: 1,
-        title: "Title 1"
-    },
-    {
-        friendlyId: 2,
-        title: "Title 2"
-    },
-    {
-        friendlyId: 3,
-        title: "Title 3"
-    },
-    {
-        friendlyId: 4,
-        title: "Title 4"
-    },
-    {
-        friendlyId: 5,
-        title: "Title 5"
-    }];
-});
