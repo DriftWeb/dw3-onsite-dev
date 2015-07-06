@@ -1,6 +1,43 @@
 <div ng-controller="list2Ctrl">
-    <div>{{list.length}}</div>
-    <div class="row" ng-repeat="item in list">
-        <div class="col-md-12 listItem" ng-swipe-right="rightSlide(item)" ng-swipe-left="leftSlide(item)">{{item.title}} {{item.open}}</div>
+    <div class="list">
+        <div class="row" ng-repeat="item in list" ng-class="{'row-selected': $index === $parent.selectedIndex}">
+            <div class="col-md-12 listItem" ng-click="click($index)">
+                <div class="col-xs-2">Icon</div>
+                <div class="col-xs-10">
+                    <div class="col-xs-12">
+                        <strong>{{item.title}}</strong>
+                    </div>
+                    <div class="col-md-6">
+                        {{item.locationNear}}
+                    </div>
+                    <div class="col-md-6">
+                        Tildelt til: {{item.assignedBy}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="showLight" class="details-light" ng-swipe-up="toggleShowMore()" ng-click="toggleShowMore()">
+        <div class="row">
+            <strong>{{selectedItem.title}}</strong>
+        </div>
+        <div class="row">
+            <input class="btn btn-default" type="button" value="Afvist" ng-click="$event.stopPropagation();">
+            <input class="btn btn-default" type="button" value="Start" ng-click="$event.stopPropagation();">
+        </div>
+    </div>
+    <div ng-show="showMore" class="details-more">
+        <div class="row">
+            <div id="map" class="map"></div>
+        </div>
+        <div class="row" ng-swipe-down="toggleShowMore()" ng-click="toggleShowMore()">
+            <div class="row">
+                <strong>{{selectedItem.title}}</strong>
+            </div>
+            <div class="row">
+                <input class="btn btn-default" type="button" value="Afvist" ng-click="$event.stopPropagation();">
+                <input class="btn btn-default" type="button" value="Start" ng-click="$event.stopPropagation();">
+            </div>
+        </div>
     </div>
 </div>

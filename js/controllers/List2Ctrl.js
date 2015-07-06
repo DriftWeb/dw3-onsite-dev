@@ -1,31 +1,45 @@
 ﻿angular.module('onsiteApp').controller('list2Ctrl', function ($scope) {
-    $scope.list = [
-        {
-            friendlyId: 1,
-            title: "Title 1"
-        },
-        {
-            friendlyId: 2,
-            title: "Title 2"
-        },
-        {
-            friendlyId: 3,
-            title: "Title 3"
-        },
-        {
-            friendlyId: 4,
-            title: "Title 4"
-        },
-        {
-            friendlyId: 5,
-            title: "Title 5"
-        }
-    ];
+    $scope.selectedIndex = -1;
+    $scope.showLight = false;
+    $scope.showMore = false;
+    $scope.selectedItem = null;
+    $scope.showMore = false;
+    $scope.list = [];
+    for (var i = 0; i < 50; i++) {
+        $scope.list.push({
+            friendlyId: i,
+            title: "Græs: Græsklipning ",
+            locationNear: "Sundholmsvej " + i + ", 2300 København S",
+            assignedBy: "Martin Anthoniussen "
+        });
+    }
 
-    $scope.leftSlide = function (item) {
-        item.open = true;
+    $scope.click = function ($index) {
+        $scope.selectedIndex = $index;
+        $scope.selectedItem = $scope.list[$index];
+        $scope.showLight = true;
     };
-    $scope.rightSlide = function (item) {
-        item.open = false;
-    };
+
+    $scope.toggleShowMore = function () {
+        $scope.showLight = !$scope.showLight;
+        $scope.showMore = !$scope.showMore;
+    }
+
+    var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+              source: new ol.source.OSM()
+          })
+        ],
+        controls: ol.control.defaults({
+            attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+                collapsible: false
+            })
+        }),
+        target: 'map',
+        view: new ol.View({
+            center: [0, 0],
+            zoom: 2
+        })
+    });
 });

@@ -1,5 +1,5 @@
 // Declare app level module which depends on filters, and services
-var onsiteApp = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch'])
+var onsiteApp = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch', 'swipe'])
 .config(function ($compileProvider) {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
 })

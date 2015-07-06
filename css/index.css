@@ -42,3 +42,34 @@ a {
     border-radius: 4px;
     background: lightblue;
 }
+
+.row-selected {
+    background-color: #cd853f;
+}
+
+.details-light {
+    border-top: solid 1px black;
+    position: fixed;
+    bottom: 0px;
+    background-color: white;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+}
+
+.details-more {
+    border-top: solid 1px black;
+    position: fixed;
+    bottom: 0px;
+    background-color: white;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+
+.details-more .map {
+    height: 200px;
+}
+.list {
+    
+}
