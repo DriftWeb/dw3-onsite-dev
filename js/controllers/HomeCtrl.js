@@ -1,6 +1,6 @@
 ﻿(function () {
     angular.module('onsiteApp').controller('HomeCtrl', function ($scope, $rootScope) {
-        $rootScope.list = [
+        $rootScope.list2 = [
 {
     friendlyId: 1,
     title: "Title 1"
@@ -27,6 +27,5 @@
         $scope.rightSlide = function (item) {
             item.open = false;
         };
-    });
     });
 })();
