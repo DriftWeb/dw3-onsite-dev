@@ -10,5 +10,6 @@ var app = angular.module('onsiteApp', ['ngRoute'])
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', { templateUrl: 'partials/homeView.html', controller: 'HomeCtrl' });
     $routeProvider.when('/list', { templateUrl: 'partials/listView.html', controller: 'ListCtrl' });
+    $routeProvider.when('/map', { templateUrl: 'partials/mapView.html', controller: 'MapCtrl' });
     $routeProvider.otherwise({ redirectTo: '/' });
 }]);
