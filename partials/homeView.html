@@ -1,7 +1,14 @@
 <div ng-controller="HomeCtrl">
-    <div>Startside</div>
-    {{list2.length}}
-    <div class="row" ng-repeat="item in list2">
+    <div class="header"></div>
+    <div class=".col-md-10 .col-md-offset-1">
+    	<div class=".col-md-6 dashboardItem">Driftweb List</div>
+    	<div class=".col-md-6 dashboardItem">Driftweb Map</div>
+    	<div class=".col-md-6 dashboardItem">Driftweb Test123</div>
+    	<div class=".col-md-6 dashboardItem">Driftweb Test456</div>
+    </div>
+    <div class="footer"></div>
+    <a href="#/list">List</a>
+    <div class="row" ng-repeat="item in list">
         <div class="col-md-12" ng-swipe-right="rightSlide(item)" ng-swipe-left="leftSlide(item)">{{item.title}} {{item.open}}</div>
     </div>
     <a href="#/list">List</a>
