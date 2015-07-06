@@ -1,15 +1,3 @@
-﻿(function () {
-    angular.module('onsiteApp').controller('DetailsCtrl', function ($scope, $rootScope) {
-        $rootScope.testme = [];
-        $rootScope.testme = [
-            {
-                friendlyId: 1,
-                title: "Thingstoshow"
-            },
-            {
-                friendlyId: 2,
-                title: "Sometest123"
-            }
-        ];
-    });
-})();
+﻿angular.module('onsiteApp').controller('detailsCtrl', function ($scope) {
+    $scope.firstName = "John";
+});
