@@ -1,6 +1,3 @@
-'use strict';
-
-
 // Declare app level module which depends on filters, and services
 var onsiteApp = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch'])
 .config(function ($compileProvider) {
