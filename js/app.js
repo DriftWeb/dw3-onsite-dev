@@ -6,6 +6,7 @@ var onsiteApp = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch'])
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', { templateUrl: 'partials/homeView.html' });
     $routeProvider.when('/list', { templateUrl: 'partials/listView.html' });
+    $routeProvider.when('/list1', { templateUrl: 'partials/listView_1.html' });
     $routeProvider.when('/map', { templateUrl: 'partials/mapView.html' });
     $routeProvider.when('/details', { templateUrl: 'partials/detailsView.html' });
 
