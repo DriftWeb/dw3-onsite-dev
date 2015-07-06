@@ -29,6 +29,17 @@
         item.open = false;
     };
     
+    $scope.listLineClick = function(item) {
+        var dirPath = dirname(location.href);
+        fullPath = dirPath + "#/details";
+        window.location=fullPath;
+    };
+    
+    function dirname(path)
+    {
+       return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
+    }
+    
     $scope.statusChange = function(item, status) {
         alert(item.title +  " - status " + status);
     };
