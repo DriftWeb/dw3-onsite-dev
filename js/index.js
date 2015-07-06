@@ -34,8 +34,8 @@ var app = {
    
     // deviceready Event Handler
     onDeviceReady: function () {
-        //var domElement = document.getElementById("onsite");
-        //angular.bootstrap(domElement, ["onsiteApp"]);
+        var domElement = document.getElementById("onsite");
+        angular.bootstrap(domElement, ["onsiteApp"]);
         //angular.element(document).ready(function() {
         //    angular.bootstrap(document);
         //});
