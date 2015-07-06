@@ -48,6 +48,21 @@ a {
     background: lightblue;
 }
 
+.buttonPanel {
+    background: yellowgreen;
+    position: relative;
+    right: -15px;
+}
+
+.buttonPanel .btn {
+    background: yellow;
+    line-height: 30px;
+}
+
+.off .buttonPanel {
+    display: none;
+}
+
 .row-selected {
     background-color: #cd853f;
 }
