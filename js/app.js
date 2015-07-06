@@ -10,7 +10,7 @@ var app = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch'])
 
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', { templateUrl: 'partials/homeView.html', controller: 'HomeCtrl' });
-    $routeProvider.when('/list', { templateUrl: 'partials/listView.html', controller: 'ListCtrl' });
-    $routeProvider.when('/map', { templateUrl: 'partials/mapView.html', controller: 'MapCtrl' });
+    $routeProvider.when('/list', { templateUrl: 'partials/listView.html' });
+    $routeProvider.when('/map', { templateUrl: 'partials/mapView.html' });
     $routeProvider.otherwise({ redirectTo: '/' });
 }]);
