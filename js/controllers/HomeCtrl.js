@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module('onsiteApp').controller('HomeCtrl', function () {
+    angular.module('onsiteApp').controller('HomeCtrl', function ($scope) {
 
         $scope.swipeRight = function () {
             $scope.direction = 'right';
