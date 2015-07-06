@@ -1,0 +1,6 @@
+<div ng-controller="ListCtrl">
+    {{list.length}}
+    <div class="row" ng-repeat="item in list">
+        <div class="col-md-12" ng-swipe-right="rightSlide(item)" ng-swipe-left="leftSlide(item)">{{item.title}} {{item.open}}</div>
+    </div>
+</div>
