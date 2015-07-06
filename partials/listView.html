@@ -1,6 +1,12 @@
-<div ng-controller="ListCtrl">
-    <div ng-click="click()">{{list.length}}</div>
+<div ng-controller="listCtrl">
     <div class="row" ng-repeat="item in list">
-        <div class="col-md-12" ng-swipe-right="rightSlide(item)" ng-swipe-left="leftSlide(item)">{{item.title}} {{item.open}}</div>
+        <div class="col-md-12 listItem" ng-class="{'off' : !item.open}" ng-swipe-right="rightSlide(item)" ng-swipe-left="leftSlide(item)" ng-click="listLineClick(item)">
+            {{item.title}} {{item.open}}
+            <div class="col-xs-8 pull-right buttonPanel">
+                <span class="col-xs-3 col-xs-offset-1 btn" ng-click="statusChange(item, 1)">1</span>
+                <span class="col-xs-3 col-xs-offset-1 btn" ng-click="statusChange(item, 2)">2</span>
+                <span class="col-xs-3 col-xs-offset-1 btn" ng-click="statusChange(item, 3)">3</span>
+            </div>
+        </div>
     </div>
 </div>
