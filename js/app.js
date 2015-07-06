@@ -6,35 +6,11 @@ function jsonp_callback(data) {
 }
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('onsiteApp', ['ngRoute'])
+var app = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch'])
 
 .config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/', { templateUrl: 'partials/listView.html', controller: 'ListCtrl' });
-    $routeProvider.when('/list', { templateUrl: 'partials/listView.html', controller: 'ListCtrl' });
-    $routeProvider.when('/map', { templateUrl: 'partials/mapView.html', controller: 'MapCtrl' });
+    $routeProvider.when('/', { templateUrl: 'partials/homeView.html', controller: 'HomeCtrl' });
+    $routeProvider.when('/list', { templateUrl: 'partials/listView.html' });
+    $routeProvider.when('/map', { templateUrl: 'partials/mapView.html' });
     $routeProvider.otherwise({ redirectTo: '/' });
 }]);
-
-app.run(function ($rootScope) {
-    $rootScope.list = [
-    {
-        friendlyId: 1,
-        title: "Title 1"
-    },
-    {
-        friendlyId: 2,
-        title: "Title 2"
-    },
-    {
-        friendlyId: 3,
-        title: "Title 3"
-    },
-    {
-        friendlyId: 4,
-        title: "Title 4"
-    },
-    {
-        friendlyId: 5,
-        title: "Title 5"
-    }];
-});
