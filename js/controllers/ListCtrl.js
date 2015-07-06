@@ -28,4 +28,8 @@
     $scope.rightSlide = function (item) {
         item.open = false;
     };
+    
+    $scope.statusChange = function(item, status) {
+        alert(item.title +  " - status " + status);
+    };
 });
