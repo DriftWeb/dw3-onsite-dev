@@ -1,6 +1,6 @@
 ﻿(function () {
     angular.module('onsiteApp').controller('ListCtrl', function ($scope, $rootScope, $timeout) {
-        $rootScope.list = [];
+        $scope.list = [];
         $timeout(function() {
             $rootScope.list = [
                 {
