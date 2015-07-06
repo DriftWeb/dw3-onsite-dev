@@ -1,12 +1,12 @@
 <div ng-controller="HomeCtrl">
-    <div class="header"></div>
-    <div class=".col-md-10 .col-md-offset-1">
-    	<div class=".col-md-6 dashboardItem">Driftweb List</div>
-    	<div class=".col-md-6 dashboardItem">Driftweb Map</div>
-    	<div class=".col-md-6 dashboardItem">Driftweb Test123</div>
-    	<div class=".col-md-6 dashboardItem">Driftweb Test456</div>
+    <div class="header">DriftWeb DashBoard</div>
+    <div class="col-md-10 col-md-offset-1">
+        <a href="#/list"><div class="col-md-6 dashboardItem">Driftweb List</div></a>
+        <a href="#/map"><div class="col-md-6 dashboardItem">Driftweb Map</div></a>
+    	<div class="col-md-6 dashboardItem">Driftweb Test123</div>
+    	<div class="col-md-6 dashboardItem">Driftweb Test456</div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">V 0.0.1</div>
     <a href="#/list">List</a>
     <div class="row" ng-repeat="item in list">
         <div class="col-md-12" ng-swipe-right="rightSlide(item)" ng-swipe-left="leftSlide(item)">{{item.title}} {{item.open}}</div>
