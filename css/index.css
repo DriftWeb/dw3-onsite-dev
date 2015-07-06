@@ -2,6 +2,9 @@ a {
     
 }
 
+
+// Dashboard
+
 .dashboardItem {
     background: lightblue;
     font-size: 20px;
@@ -32,4 +35,11 @@ a {
     font-size: 13px;
     left: 15px;
     right: 15px;
+}
+
+
+// List
+.listItem {
+    border: 1px solid black;
+    background: lightblue;
 }
