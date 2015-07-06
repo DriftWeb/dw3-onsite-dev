@@ -6,7 +6,7 @@ function jsonp_callback(data) {
 }
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch'])
+var app = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch', 'onsiteApp.controllers'])
 
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', { templateUrl: 'partials/homeView.html' });

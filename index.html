@@ -1,6 +1,6 @@
 ﻿
 <!DOCTYPE html>
-<html xmlns:ng="http://angularjs.org" lang="en" ng-app="onsiteApp">
+<html xmlns:ng="http://angularjs.org" lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
@@ -23,7 +23,7 @@
     <title>DriftWeb OnSite</title>
 </head>
 
-<body>
+<body id="onsite">
     <!-- The following tag is in place of ng-view to use the angular mobile view navigation framework
         https://github.com/ajoslin/angular-mobile-nav
     -->
@@ -33,7 +33,8 @@
 
     <!-- Comment out the following 2 lines to test on the browser-->
     <!--<script type="text/javascript" src="cordova.js"></script>-->
-    <script type="text/javascript" src="js/index.js"></script>
+    <script src="phonegap.js"></script>
+    <script src="js/index.js"></script>
 
     <!--<script src="lib/ol-debug.js"></script>-->
     <script src="lib/jquery-1.11.3.min.js"></script>
@@ -48,8 +49,6 @@
     <script src="js/controllers/listCtrl.js"></script>
     <!--<script src="js/controllers/MapCtrl.js"></script>-->
 
-    <script src="cordova.js"></script>
-    <script src="js/index.js"></script>
 
     <script type="text/javascript">
         app.initialize();
