@@ -9,7 +9,7 @@ function jsonp_callback(data) {
 var app = angular.module('onsiteApp', ['ngRoute', 'ngAnimate', 'ngTouch'])
 
 .config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/', { templateUrl: 'partials/homeView.html', controller: 'HomeCtrl' });
+    $routeProvider.when('/', { templateUrl: 'partials/homeView.html' });
     $routeProvider.when('/list', { templateUrl: 'partials/listView.html' });
     $routeProvider.when('/map', { templateUrl: 'partials/mapView.html' });
     $routeProvider.otherwise({ redirectTo: '/' });
