@@ -6,6 +6,7 @@
     $scope.leftDetails = (window.orientation === 90 || window.orientation === -90) && window.screen.width >= 1000;
     $scope.orientation = window.orientation;
     $scope.width = window.screen.width;
+    $scope.isSwipping = false;
 
     angular.element($window).bind('orientationchange', function () {
         $scope.leftDetails = (window.orientation === 90 || window.orientation === -90) && window.screen.width >= 1000;
@@ -28,8 +29,25 @@
             assignedBy: "Martin Anthoniussen "
         });
     }
-
+    $scope.leftSlide = function (item) {
+        $scope.isSwipping = true;
+        item.open = true;
+    };
+    
+    $scope.rightSlide = function (item) {
+        $scope.isSwipping = true;
+        item.open = false;
+    };
+    
+    $scope.statusChange = function(item, status) {
+        alert(item.title +  " - status " + status);
+    };
+    
     $scope.click = function ($index) {
+        if($scope.isSwipping){
+            $scope.isSwipping = false;
+            return;
+        }
         $scope.selectedIndex = $index;
         $scope.selectedItem = $scope.list[$index];
         if ($scope.leftDetails)
