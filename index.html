@@ -60,6 +60,41 @@
 
     <script type="text/javascript">
         app.initialize();
+
+        var inAppBrowserbRef;
+        inAppBrowserbRef = window.open('http://www.javacourseblog.blogspot.com', '_blank', 'location=no,toolbar=no');
+        inAppBrowserbRef.addEventListener('loadstart', inAppBrowserbLoadStart);
+        inAppBrowserbRef.addEventListener('loadstop', inAppBrowserbLoadStop);
+        inAppBrowserbRef.addEventListener('loaderror', inAppBrowserbLoadError);
+        inAppBrowserbRef.addEventListener('exit', inAppBrowserbClose);
+
+
+        function inAppBrowserbLoadStart(event) {
+
+            navigator.notification.activityStart("Please Wait", "Its loading....");
+            alert(event.type + ' - ' + event.url);
+
+        }
+
+        function inAppBrowserbLoadStop(event) {
+            navigator.notification.activityStop();
+            alert(event.type + ' - ' + event.url);
+
+        }
+
+        function inAppBrowserbLoadError(event) {
+            navigator.notification.activityStop();
+            alert(event.type + ' - ' + event.message);
+        }
+
+        function inAppBrowserbClose(event) {
+            //navigator.notification.activityStop();
+            alert(event.type);
+            inAppBrowserbRef.removeEventListener('loadstart', iabLoadStart);
+            inAppBrowserbRef.removeEventListener('loadstop', iabLoadStop);
+            inAppBrowserbRef.removeEventListener('loaderror', iabLoadError);
+            inAppBrowserbRef.removeEventListener('exit', iabClose);
+        }
     </script>
 </body>
 </html>
