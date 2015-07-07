@@ -1,9 +1,9 @@
 <div ng-controller="list2Ctrl" class="full-size">
     orientation: {{orientation}} width: {{width}}
     <div class="row full-height">
-        <div ng-class="{'col-xs-6': leftDetails && fullDetails}"  class="col-md-6" ng-show="fullDetails">
+        <div ng-class="{'col-xs-6': leftDetails && fullDetails}"  class="col-md-6 full-height" ng-show="fullDetails">
             <div ng-class="{'details-left': leftDetails, 'details-more': !leftDetails}">
-                <div ng-include="'partials/fullDetailsView.html'"></div>
+                <div ng-include="'partials/fullDetailsView.html'" class="full-height"></div>
             </div>
         </div>
         <div ng-class="{'col-xs-6': leftDetails && fullDetails, 'col-xs-12': !(leftDetails && fullDetails)}" class="full-height">

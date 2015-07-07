@@ -3,16 +3,44 @@
         <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
     </button>
     <span class="pull-left">{{selectedItem.friendlyId}}</span>
-</div>
-<div>
     <openlayers width="100%" height="400px"></openlayers>
 </div>
-<div>
-    <div>
-        <strong>{{selectedItem.title}}</strong>
+<div class="detailTop">
+    <div class="detailItemHeader">{{selectedItem.title}}</div>
+    <div>{{selectedItem.locationNear}}</div>
+</div>
+
+<div class="detailButtons">
+    <div class="col-xs-4">
+        <b><input class="btn btn-default" type="button" value="Afvist" ng-click="$event.stopPropagation();"></b>
     </div>
-    <div>
-        <input class="btn btn-default" type="button" value="Afvist" ng-click="$event.stopPropagation();">
-        <input class="btn btn-default" type="button" value="Start" ng-click="$event.stopPropagation();">
+    <div class="col-xs-4">
+        <b><input class="btn btn-default" type="button" value="Start" ng-click="$event.stopPropagation();"></b>
     </div>
+    <div class="col-xs-4">
+        <b><input class="btn btn-default" type="button" value="Afslut" ng-click="$event.stopPropagation();"></b>
+    </div>
+</div>
+<div class="detailItemDescription">
+    a as in father
+    ae as ey in they
+    e (when closed in by consonants) as e in met
+    e (at the end of a syllable) as ey in they
+    i as i in machine
+    o as o in note
+    oe as ey in they
+    u as oo in boot
+    y as i in machine
+    Consonants
+    j as y in yes
+    Consonants before ae-e-o-i-y:
+    c as ch in chain
+    cc as tch in match
+    sc as sh in sheep
+    g as g in gentle
+    Consonants in other cases:
+    c as c in cot
+    cc as cc in accord
+    sc as sc in tabasco
+    g as g in go
 </div>

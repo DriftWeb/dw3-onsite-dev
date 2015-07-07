@@ -9,23 +9,23 @@
     <div class="row detailTop">
         <div class="col-md-12">
             <div class="col-xs-12 detailItemHeader">
-                <div>Haek:Tilsyn</div>
+                <div>{{selectedItem.title}}</div>
             </div>
             <div class="col-xs-12">
-                <div>Noergaardsvej 14, 8940 Randers SV</div>
+                <div>{{selectedItem.locationNear}}</div>
             </div>
         </div>
     </div>
     <div class="row detailButtons">
         <div class="col-md-12">
             <div class="col-xs-4">
-                <b>KNAP 1</b>
+                <b><input class="btn btn-default" type="button" value="Afvist" ng-click="$event.stopPropagation();"></b>
             </div>
             <div class="col-xs-4">
-                <b>KNAP 2</b>
+                <b><input class="btn btn-default" type="button" value="Start" ng-click="$event.stopPropagation();"></b>
             </div>
             <div class="col-xs-4">
-                <b>KNAP 3</b>
+                <b><input class="btn btn-default" type="button" value="Afslut" ng-click="$event.stopPropagation();"></b>
             </div>
         </div>
     </div>
