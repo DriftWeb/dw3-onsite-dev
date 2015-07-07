@@ -3,7 +3,7 @@
     <div class="row full-height">
         <div ng-class="{'col-md-6': leftDetails && fullDetails}"  class="col-md-6" ng-show="fullDetails">
             <div ng-class="{'details-left': leftDetails, 'details-more': !leftDetails}">
-                <div ng-include="'partials/fullDetailsView.html'"></div>
+                <!--<div ng-include="'partials/fullDetailsView.html'"></div>-->
             </div>
         </div>
         <div ng-class="{'col-md-6': leftDetails && fullDetails, 'col-md-12': !(leftDetails && fullDetails)}" class="full-height">
@@ -33,6 +33,6 @@
         </div>
     </div>
     <div ng-show="lightDetails" class="details-light" ng-swipe-up="showMore()" ng-click="showMore()">
-        <div ng-include="'partials/lightDetailsView.html'"></div>
+        <!--<div ng-include="'partials/lightDetailsView.html'"></div>-->
     </div>
 </div>
