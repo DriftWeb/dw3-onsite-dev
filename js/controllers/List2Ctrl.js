@@ -8,8 +8,9 @@
     $scope.width = window.screen.width;
     $scope.isSwipping = false;
 
-    console.log(WURFL.form_factor);
-    $scope.something = WURFL.form_factor;
+    var deviceType = (navigator.userAgent.match(/iPad/i)) == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i)) == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+    console.log(deviceType);
+    $scope.something = deviceType;
 
     angular.element($window).bind('orientationchange', function () {
         $scope.leftDetails = (window.orientation === 90 || window.orientation === -90) && window.screen.width >= 1000;
