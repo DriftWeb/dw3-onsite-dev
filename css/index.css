@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 a {
@@ -50,9 +50,9 @@ a {
     line-height: 44px;
 }
 
-    .listItem.off {
-        background: lightblue;
-    }
+.listItem.off {
+    background: lightblue;
+}
 
 .buttonPanel {
     background: yellowgreen;
@@ -66,6 +66,22 @@ a {
 }
 
 .off .buttonPanel {
+    display: none;
+}
+
+.buttonPanel2 {
+    background: yellowgreen;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+}
+
+.buttonPanel2 .btn {
+    background: yellow;
+    height: 100%;
+}
+
+.off .buttonPanel2 {
     display: none;
 }
 
@@ -109,7 +125,7 @@ a {
 
 .list {
     height: 100%;
-    overflow: auto;
+    /* overflow: auto; */
     width: 100%;
 }
 
@@ -127,5 +143,5 @@ a {
 
 .full-height {
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
