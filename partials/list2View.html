@@ -1,4 +1,5 @@
 <div ng-controller="list2Ctrl" class="full-size">
+    orientation: {{orientation}} width: {{width}}
     <div class="row full-height">
         <div class="col-md-6" ng-show="fullDetails">
             <div ng-class="{'details-left': leftDetails, 'details-more': !leftDetails}">
@@ -22,9 +23,8 @@
                 </div>
             </div>
         </div>
-        <div ng-class="{'col-md-6': leftDetails && fullDetails, 'col-md-12': !leftDetails || !fullDetails}" class="full-height">
+        <div ng-class="{'col-md-6': leftDetails && fullDetails, 'col-md-12': !(leftDetails && fullDetails)}" class="full-height">
             <div class="list">
-                orientation: {{orientation}} width: {{width}}
                 <div class="row" ng-repeat="item in list" ng-class="{'row-selected': $index === $parent.selectedIndex}">
                     <div class="col-md-12" ng-click="click($index)">
                         <div class="row">
