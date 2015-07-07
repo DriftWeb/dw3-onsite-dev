@@ -8,6 +8,8 @@
     $scope.width = window.screen.width;
     $scope.isSwipping = false;
 
+    $scope.something = window.WURFL.form_factor;
+
     angular.element($window).bind('orientationchange', function () {
         $scope.leftDetails = (window.orientation === 90 || window.orientation === -90) && window.screen.width >= 1000;
         $scope.orientation = window.orientation;
@@ -70,22 +72,4 @@
             $scope.lightDetails = true;
         }
     }
-
-    var map = new ol.Map({
-        layers: [
-          new ol.layer.Tile({
-              source: new ol.source.OSM()
-          })
-        ],
-        controls: ol.control.defaults({
-            attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
-                collapsible: false
-            })
-        }),
-        target: 'map-more',
-        view: new ol.View({
-            center: [0, 0],
-            zoom: 2
-        })
-    });
 });
