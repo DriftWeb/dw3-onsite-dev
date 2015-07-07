@@ -8,6 +8,7 @@
     $scope.width = window.screen.width;
     $scope.isSwipping = false;
 
+    $scope.something = window.WURFL.form_factor;
 
     angular.element($window).bind('orientationchange', function () {
         $scope.leftDetails = (window.orientation === 90 || window.orientation === -90) && window.screen.width >= 1000;
