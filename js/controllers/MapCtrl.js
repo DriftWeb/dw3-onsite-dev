@@ -30,7 +30,7 @@
             feature.setStyle(olHelpers.createStyle({
                 fill: {
                     color: 'rgba(255, 0, 0, 0.2)'
-                }
+                    }
             }));
         });
 
