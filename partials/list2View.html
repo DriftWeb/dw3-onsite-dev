@@ -8,7 +8,7 @@
         </div>
         <div ng-class="{'col-md-6': leftDetails && fullDetails, 'col-md-12': !(leftDetails && fullDetails)}" class="full-height">
             <div class="list">
-                <div class="row" ng-repeat="item in list" ng-class="{'row-selected': $index === $parent.selectedIndex}">
+                <div class="row listRow" ng-repeat="item in list" ng-class="{'row-selected': $index === $parent.selectedIndex}">
                     <div class="col-md-12" ng-class="{'off' : !item.open}" ng-swipe-right="rightSlide(item);" ng-swipe-left="leftSlide(item, $event);"  ng-click="click($index)">
                         <div class="row">
                             <div class="col-xs-2">Icon</div>
