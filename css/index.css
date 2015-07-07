@@ -123,7 +123,6 @@ a {
 .full-size {
     height: 100%;
     width: 100%;
-    overflow: hidden;
 }
 
 .full-height {
