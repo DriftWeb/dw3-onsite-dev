@@ -1,5 +1,5 @@
 <div ng-controller="list2Ctrl" class="full-size">
-    orientation: {{orientation}} width: {{width}}
+    test {{something}} orientation: {{orientation}} width: {{width}}
     <div class="row full-height">
         <div ng-class="{'col-md-6': leftDetails && fullDetails}"  class="col-md-6" ng-show="fullDetails">
             <div ng-class="{'details-left': leftDetails, 'details-more': !leftDetails}">
@@ -21,7 +21,6 @@
                                         {{item.locationNear}}
                                     </div>
                                     <div class="col-md-6">
-                                        {{something}}
                                         Tildelt til: {{item.assignedBy}}
                                     </div>
                                 </div>
