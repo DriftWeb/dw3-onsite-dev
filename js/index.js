@@ -18,24 +18,30 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
-    
+
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('load', this.onLoad, false);
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+    bindEvents: function () {
+        var app = document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1;
+        if (app) {
+            document.addEventListener('load', this.onLoad, false);
+            document.addEventListener('deviceready', this.onDeviceReady, false);
+        } else {
+            this.onDeviceReady();
+        }
     },
-    onLoad: function() {
-        
+    onLoad: function () {
+
     },
-   
+
     // deviceready Event Handler
     onDeviceReady: function () {
         //angular.element(document).ready(function () {
         //    angular.bootstrap(document);
         //});
+
     }
 };

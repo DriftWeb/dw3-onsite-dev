@@ -1,5 +1,10 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
 a {
-    
 }
 /** Dashboard **/
 
@@ -14,9 +19,9 @@ a {
     text-align: center;
 }
 
-.dashboardItem:hover {
-    background: lightyellow;
-}
+    .dashboardItem:hover {
+        background: lightyellow;
+    }
 
 .header, .footer {
     background: blue;
@@ -44,9 +49,10 @@ a {
     background: red;
     line-height: 44px;
 }
-.listItem.off {
-    background: lightblue;
-}
+
+    .listItem.off {
+        background: lightblue;
+    }
 
 .row-selected {
     background-color: #cd853f;
@@ -59,22 +65,50 @@ a {
     background-color: white;
     left: 0px;
     right: 0px;
-    height: 50px;
+    height: 100px;
+    z-index: 1000;
 }
 
 .details-more {
     border-top: solid 1px black;
     position: fixed;
-    bottom: 0px;
     background-color: white;
+    bottom: 0px;
     left: 0px;
     right: 0px;
     top: 0px;
+    z-index: 1000;
 }
 
-.details-more .map {
-    height: 200px;
+.details-left {
+    background-color: white;
+    width: 100%;
+    height: 100%;
 }
+
+.map-more {
+}
+
 .list {
-    
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+}
+
+.icon-back {
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    z-index: 1000;
+}
+
+.full-size {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.full-height {
+    height: 100%;
+    overflow: hidden;
 }
