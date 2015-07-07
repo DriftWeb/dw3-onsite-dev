@@ -3,24 +3,7 @@
     <div class="row full-height">
         <div class="col-md-6" ng-show="fullDetails">
             <div ng-class="{'details-left': leftDetails, 'details-more': !leftDetails}">
-                <div ng-swipe-down="showLess()">
-                    <button type="button" class="btn btn-default pull-left" aria-label="Left Align" ng-click="showLess()">
-                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-                    </button>
-                    <span class="pull-left">{{selectedItem.friendlyId}}</span>
-                </div>
-                <div>
-                    <div id="map-more" class="map-more"></div>
-                </div>
-                <div>
-                    <div>
-                        <strong>{{selectedItem.title}}</strong>
-                    </div>
-                    <div>
-                        <input class="btn btn-default" type="button" value="Afvist" ng-click="$event.stopPropagation();">
-                        <input class="btn btn-default" type="button" value="Start" ng-click="$event.stopPropagation();">
-                    </div>
-                </div>
+                <div ng-include="'partials/fullDetailsView.html'"></div>
             </div>
         </div>
         <div ng-class="{'col-md-6': leftDetails && fullDetails, 'col-md-12': !(leftDetails && fullDetails)}" class="full-height">
@@ -49,16 +32,6 @@
         </div>
     </div>
     <div ng-show="lightDetails" class="details-light" ng-swipe-up="showMore()" ng-click="showMore()">
-        <div class="row">
-            <div class="col-md-12">
-                <strong>{{selectedItem.title}}</strong>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <input class="btn btn-default" type="button" value="Afvist" ng-click="$event.stopPropagation();">
-                <input class="btn btn-default" type="button" value="Start" ng-click="$event.stopPropagation();">
-            </div>
-        </div>
+        <div ng-include="'partials/lightDetailsView.html'"></div>
     </div>
 </div>
