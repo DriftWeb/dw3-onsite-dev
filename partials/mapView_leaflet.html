@@ -1,0 +1,6 @@
+<div ng-controller="MapCtrl" class="full-size">
+    <openlayers ol-center="center" ol-markers="markers" height="100%" width="100%">
+        <ol-marker ng-repeat="marker in markers" lat="marker.lat" lon="marker.lon"></ol-marker>
+    </openlayers>
+</div>
+
