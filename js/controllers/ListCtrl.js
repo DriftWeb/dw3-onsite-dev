@@ -1,4 +1,5 @@
 ﻿angular.module('onsiteApp').controller('listCtrl', function ($scope) {
+    $scope.isSwipping = false;
     $scope.list = [
         {
             friendlyId: 1,
@@ -23,13 +24,19 @@
     ];
 
     $scope.leftSlide = function (item) {
+        $scope.isSwipping = true;
         item.open = true;
     };
     $scope.rightSlide = function (item) {
+        $scope.isSwipping = true;
         item.open = false;
     };
     
     $scope.listLineClick = function(item) {
+        if($scope.isSwipping){
+            $scope.isSwipping = false;
+            return;
+        }
         var dirPath = dirname(location.href);
         fullPath = dirPath + "#/details";
         window.location=fullPath;
