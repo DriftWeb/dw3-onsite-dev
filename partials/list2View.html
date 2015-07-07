@@ -1,7 +1,7 @@
 <div ng-controller="list2Ctrl" class="full-size">
     <div class="row full-height">
-        <div class="col-md-6">
-            <div ng-show="fullDetails" ng-class="{'details-left': leftDetails, 'details-more': !leftDetails}">
+        <div class="col-md-6" ng-show="fullDetails">
+            <div ng-class="{'details-left': leftDetails, 'details-more': !leftDetails}">
                 <div ng-swipe-down="showLess()">
                     <button type="button" class="btn btn-default pull-left" aria-label="Left Align" ng-click="showLess()">
                         <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
