@@ -37,9 +37,11 @@
             $scope.isSwipping = false;
             return;
         }
-        var dirPath = dirname(location.href);
-        fullPath = dirPath + "#/details";
-        window.location=fullPath;
+        //var dirPath = dirname(location.href);
+        //fullPath = dirPath + "#/details";
+        //window.location=fullPath;
+        
+        
     };
     
     function dirname(path)
