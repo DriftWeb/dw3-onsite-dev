@@ -6,6 +6,7 @@
     $scope.leftDetails = (window.orientation === 90 || window.orientation === -90) && window.screen.width >= 1000;
     $scope.orientation = window.orientation;
     $scope.width = window.screen.width;
+    $scope.isSwipping = false;
 
     $scope.something = window.WURFL.form_factor;
 
@@ -30,8 +31,25 @@
             assignedBy: "Martin Anthoniussen "
         });
     }
-
+    $scope.leftSlide = function (item) {
+        $scope.isSwipping = true;
+        item.open = true;
+    };
+    
+    $scope.rightSlide = function (item) {
+        $scope.isSwipping = true;
+        item.open = false;
+    };
+    
+    $scope.statusChange = function(item, status) {
+        alert(item.title +  " - status " + status);
+    };
+    
     $scope.click = function ($index) {
+        if($scope.isSwipping){
+            $scope.isSwipping = false;
+            return;
+        }
         $scope.selectedIndex = $index;
         $scope.selectedItem = $scope.list[$index];
         if ($scope.leftDetails)
@@ -54,22 +72,4 @@
             $scope.lightDetails = true;
         }
     }
-
-    var map = new ol.Map({
-        layers: [
-          new ol.layer.Tile({
-              source: new ol.source.OSM()
-          })
-        ],
-        controls: ol.control.defaults({
-            attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
-                collapsible: false
-            })
-        }),
-        target: 'map-more',
-        view: new ol.View({
-            center: [0, 0],
-            zoom: 2
-        })
-    });
 });

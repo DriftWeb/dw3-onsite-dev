@@ -3,13 +3,13 @@
     <div class="row full-height">
         <div ng-class="{'col-md-6': leftDetails && fullDetails}"  class="col-md-6" ng-show="fullDetails">
             <div ng-class="{'details-left': leftDetails, 'details-more': !leftDetails}">
-                <div ng-include="'partials/fullDetailsView.html'"></div>
+                <!--<div ng-include="'partials/fullDetailsView.html'"></div>-->
             </div>
         </div>
         <div ng-class="{'col-md-6': leftDetails && fullDetails, 'col-md-12': !(leftDetails && fullDetails)}" class="full-height">
             <div class="list">
                 <div class="row" ng-repeat="item in list" ng-class="{'row-selected': $index === $parent.selectedIndex}">
-                    <div class="col-md-12" ng-click="click($index)">
+                    <div class="col-md-12" ng-class="{'off' : !item.open}" ng-swipe-right="rightSlide(item);" ng-swipe-left="leftSlide(item, $event);"  ng-click="click($index)">
                         <div class="row">
                             <div class="col-xs-2">Icon</div>
                             <div class="col-xs-10">
@@ -21,10 +21,15 @@
                                         {{item.locationNear}}
                                     </div>
                                     <div class="col-md-6">
-                                        123: {{something}}
+                                        {{something}}
                                         Tildelt til: {{item.assignedBy}}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-xs-8 pull-right buttonPanel2">
+                                <span class="col-xs-3 col-xs-offset-1 btn" ng-click="statusChange(item, 1)">1</span>
+                                <span class="col-xs-3 col-xs-offset-1 btn" ng-click="statusChange(item, 2)">2</span>
+                                <span class="col-xs-3 col-xs-offset-1 btn" ng-click="statusChange(item, 3)">3</span>
                             </div>
                         </div>
                     </div>
@@ -33,6 +38,6 @@
         </div>
     </div>
     <div ng-show="lightDetails" class="details-light" ng-swipe-up="showMore()" ng-click="showMore()">
-        <div ng-include="'partials/lightDetailsView.html'"></div>
+        <!--<div ng-include="'partials/lightDetailsView.html'"></div>-->
     </div>
 </div>
